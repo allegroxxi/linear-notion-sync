@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "console"
+    },
+    {
+      "path": "scratch"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.cwd": "${workspaceFolder}"
+  }
+}
