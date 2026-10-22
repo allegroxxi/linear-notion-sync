@@ -1,0 +1,20 @@
+{
+  "name": "@workspace/rag",
+  "version": "1.0.0",
+  "description": "Shared RAG implementation for workspace projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@chroma-core/default-embed": "^0.1.9",
+    "chromadb": "^3.5.0",
+    "langchain": "^1.5.18",
+    "undici": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "typescript": "^5.0.2"
+  }
+}

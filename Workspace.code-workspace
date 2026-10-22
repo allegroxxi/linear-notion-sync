@@ -1,10 +1,15 @@
 {
   "folders": [
     {
+      "name": "/",
       "path": "."
+    },
+    {
+      "name": "/exetensor",
+      "path": "exetensor"
     }
   ],
   "settings": {
-    "terminal.integrated.cwd": "${workspaceFolder}"
+    "terminal.integrated.cwd": "${workspaceFolder:/}"
   }
 }

@@ -1,0 +1,2 @@
+{"clineVersion":"4.1.25","hookName":"UserPromptSubmit","timestamp":"1792359783072","taskId":"conv_1792359783071_lbetw96","workspaceRoots":["/Users/christopherfleck/Workspace","/Users/christopherfleck/Workspace/terminal"],"userId":"85504330537fb11bf2c73565351a480d5bf0c9c420882dc5613ecec35f93d23f","model":{"provider":"unknown","slug":"unknown"},"userPromptSubmit":{"prompt":"<user_input mode=\"plan\">test</user_input>"}}
+
