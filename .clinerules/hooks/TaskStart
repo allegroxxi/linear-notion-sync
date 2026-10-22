@@ -21,6 +21,7 @@
 
 # Read JSON input from stdin
 INPUT=$(cat)
+SYSTEM="$(cat .clinerules/system.md)"
 
 # Parse input using jq (or fallback to basic parsing)
 if command -v jq &> /dev/null; then
@@ -40,7 +41,7 @@ echo "[TaskStart] Task ID: $TASK_ID" >&2
 
 # Example: Add context to the task
 TIMESTAMP_ISO=$(date -u -d @"$((TIMESTAMP/1000))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")
-CONTEXT_MOD="Note: Task started at $TIMESTAMP_ISO"
+CONTEXT_MOD="Note: Task started at $TIMESTAMP_ISO\n$SYSTEM"
 
 # Return result as JSON (use jq to safely encode the variable, with a simple fallback)
 if command -v jq &> /dev/null; then
@@ -49,3 +50,6 @@ else
   ESCAPED_MOD=$(printf '%s' "$CONTEXT_MOD" | sed 's/\\/\\\\/g; s/"/\\"/g')
   echo '{"cancel":false,"contextModification":"'"$ESCAPED_MOD"'","errorMessage":""}'
 fi
+
+echo $INPUT > input.txt
+echo $CONTEXT_MOD > output.txt

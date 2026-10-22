@@ -15,21 +15,21 @@
 
 # Read JSON input from stdin
 INPUT=$(cat)
-OUTPUT="$(cat .clinerules/system-common.md)"
-PLAN="$(cat .clinerules/system-plan.md)"
-ACT="$(cat .clinerules/system-act.md)"
+OUTPUT="$(cat .clinerules/system.md)"
+#PLAN="$(cat .clinerules/system-plan.md)"
+#ACT="$(cat .clinerules/system-act.md)"
 
-AGENT=$(echo "$INPUT" | jq -r '.userPromptSubmit.prompt' | xq -x "/user_input/@mode")
+#AGENT=$(echo "$INPUT" | jq -r '.userPromptSubmit.prompt' | xq -x "/user_input/@mode")
 
-if [[ "$AGENT" == "plan" ]]; then
-  OUTPUT="$PLAN $OUTPUT"
-elif [[ "$AGENT" == "act" ]]; then
-  OUTPUT="$ACT $OUTPUT"
-fi
+#if [[ "$AGENT" == "plan" ]]; then
+#  OUTPUT="$PLAN $OUTPUT"
+#elif [[ "$AGENT" == "act" ]]; then
+#  OUTPUT="$ACT $OUTPUT"
+#fi
 
 echo $INPUT > intput.txt
 echo $OUTPUT > output.txt
-echo $AGENT > agent.txt
+#echo $AGENT > agent.txt
 echo '{"cancel":false,"contextModification":"'"$OUTPUT"'","errorMessage":""}'
 
  # xq  '.user_input.@mode'
