@@ -1,5 +1,4 @@
-scratch/
+input.txt
+output.txt
 node_modules/
 exetensor/
-./input.txt
-./output.txt
