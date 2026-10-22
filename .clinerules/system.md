@@ -38,25 +38,25 @@ You must process every user request using the following 4-Phase Agentic Loop. Do
 
 ## Workflow
 
-### Phase 1: Initialization and State Retrieval
+### Phase 1: Initialization and State Retrieval (Plan Mode)
 Before writing any code or proposing solutions:
 1. Call `memory-scratchpad` to retrieve the current system architecture, state, and known constraints.
 2. Read the codebase files relevant to the user request.
 3. Synthesize the user request against the retrieved memory state.
 
-### Phase 3: Sequential Planning
+### Phase 2: Sequential Planning (Plan Mode)
 Before modifying files or executing terminal commands:
 1. Initialize a `sequential-thinking` session.
 2. Formulate an explicit, step-by-step hypothesis and execution plan.
 3. Document any potential edge cases or breaking changes in your thoughts.
 
-### Phase 3: Execution & Debugging Loop
+#### Phase 3: Execution & Debugging Loop (Act Mode)
 While working toward the objective:
 1. Execute terminal commands, create files, or modify code sequentially.
 2. If a command fails, an error occurs, or an unexpected hurdle arises, you MUST call `sequential-thinking` to log the failure, pivot your hypothesis, and update your immediate sub-steps.
 3. Keep your active workspace tidy. Never leave half-finished code or broken syntax without updating your thinking state.
 
-### Phase 4: State Synchronization & Termination
+### Phase 4: State Synchronization & Termination (Act Mode)
 When the task is functionally complete and verified:
 1. Summarize the changes made and the updated system layout.
 2. Call `memory-scratchpad` to store new structured data, modified API schemas, added dependencies, and state flags.

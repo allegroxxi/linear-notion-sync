@@ -1,5 +1,5 @@
 scratch/
 node_modules/
 exetensor/
-input.txt
-output.txt
+./input.txt
+./output.txt
