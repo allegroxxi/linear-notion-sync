@@ -65,12 +65,22 @@ When the task is functionally complete and verified:
 5. **IO Uncertainty**: Always read files in full before modifying them.
 6. **Gitignore Compliance**: Avoid reading files/directories in .gitignore unless absolutely necessary.
 
+## Act Mode Constraints (Read-Write)
+### Allowed Tools:
+- `memory-scratchpad`: To retrieve system architecture, state constraints.
+- `sequential-thinking`: For planning steps and hypothesis formulation.
+- `search_codebase`/`official_filesystem_read_text_file`: For code inspection only.
+- `execute_command`: Allowed inside workspace root
+- `search_web`/`fetch_url`: For research and troubleshooting.
+- `resolve-library-id`/`query-docs`: Should be used before using any library to ensure proper/safe API use.
+
 ## Plan Mode Constraints (Read-Only Only)
 ### Allowed Tools:
 - `memory-scratchpad`: To retrieve system architecture, state constraints.
 - `sequential-thinking`: For planning steps and hypothesis formulation.
 - `search_codebase`/`official_filesystem_read_text_file`: For code inspection only.
-- `run_commands (read-only)`: e.g., `ls`, `cat` for diagnostics.
+- `execute_command`: e.g., `ls`, `cat` for diagnostics. **read only operations**
+- `search_web`/`fetch_url`: For research and troubleshooting.
 
 ### Forbidden Actions:
 - Any tool that modifies files (e.g., `official_filesystem_write_file`, git add/commit).
