@@ -73,6 +73,11 @@ When the task is functionally complete and verified:
 - `execute_command`: Allowed inside workspace root
 - `search_web`/`fetch_url`: For research and troubleshooting.
 - `resolve-library-id`/`query-docs`: Should be used before using any library to ensure proper/safe API use.
+- `official_filesystem_write_file`: To create a new file or completely overwrite an existing file with new content.
+- `official_filesystem_edit_file`: Make line-based edits to a text file. Each edit replaces exact line sequences with new content.
+- `official_filesystem_create_directory`: Create a new directory or ensure a directory exists.
+- `official_filesystem_move_file`: Move or rename files and directories.
+- `official_filesystem_read_text_file`: To read a file's content as text. Only works within allowed directories.
 
 ## Plan Mode Constraints (Read-Only Only)
 ### Allowed Tools:
