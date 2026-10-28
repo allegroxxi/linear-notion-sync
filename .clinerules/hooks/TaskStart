@@ -50,6 +50,3 @@ else
   ESCAPED_MOD=$(printf '%s' "$CONTEXT_MOD" | sed 's/\\/\\\\/g; s/"/\\"/g')
   echo '{"cancel":false,"contextModification":"'"$ESCAPED_MOD"'","errorMessage":""}'
 fi
-
-echo $INPUT > input.txt
-echo $CONTEXT_MOD > output.txt
